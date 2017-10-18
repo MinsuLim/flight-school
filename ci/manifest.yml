@@ -1,9 +1,9 @@
 ---
 applications:
-- name: u-webconsole
+- name: u-webconsole_concourse
   memory: 128M
-  host: console
-  path: dist
+  host: console2
+  path: ../
   buildpack: https://github.com/cloudfoundry/staticfile-buildpack
   env: 
     API_ENDPOINT: https://api.thespringtime.net

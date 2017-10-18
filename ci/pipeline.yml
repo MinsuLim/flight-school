@@ -12,6 +12,7 @@ resources:
     password: eg3r5zc188aqljrddfbp
     organization: system
     space: dev
+    skip_cert_check: true
 
 jobs:
 - name: test-app
@@ -23,3 +24,4 @@ jobs:
   - put: staging-app
     params:
       manifest: flight-school/ci/manifest.yml
+
