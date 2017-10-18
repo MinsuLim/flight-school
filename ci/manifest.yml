@@ -1,0 +1,14 @@
+---
+applications:
+- name: u-webconsole
+  memory: 128M
+  host: console
+  path: dist
+  buildpack: https://github.com/cloudfoundry/staticfile-buildpack
+  env: 
+    API_ENDPOINT: https://api.thespringtime.net
+    LOG_API_ENDPOINT: https://console-logapi.thespringtime.net #https://doppler.thespringtime.net
+    USER_API_ENDPOINT: https://uaa.thespringtime.net
+    PROMETHEUS_API_ENDPOINT: https://prometheus.thespringtime.net
+    #Enforce https is used (using x_forwarded_proto check) .Default: enabled
+    FORCE_HTTPS: 1

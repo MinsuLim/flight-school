@@ -4,6 +4,14 @@ resources:
   source:
     uri: https://github.com/minsulim/flight-school
     branch: master
+- name: staging-app
+  type: cf
+  source:
+    api: https://api.thespringtime.net
+    username: admin
+    password: eg3r5zc188aqljrddfbp
+    organization: system
+    space: dev
 
 jobs:
 - name: test-app
@@ -12,3 +20,6 @@ jobs:
     trigger: true
   - task: tests
     file: flight-school/build.yml
+  - put: staging-app
+    params:
+      manifest: flight-school/ci/manifest.yml
